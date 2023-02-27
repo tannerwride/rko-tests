@@ -22,6 +22,6 @@ workflows:
     jobs:
       - build
   daily-workflow:
-    when: <<pipeline.parameter.daily>> 
+    when: <<pipeline.parameters.daily>> 
     jobs: 
       - build-a
