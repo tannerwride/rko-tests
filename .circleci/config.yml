@@ -1,14 +1,27 @@
 version: 2.1
 
+parameters:
+  nightly:
+    type: boolean
+    default: false
+
 jobs:
   build:
-    circleci_ip_ranges: true
     docker:
       - image: cimg/base:stable
     steps: 
       - run: echo "hello"
+  build-a:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - run: echo "hello there"
 
 workflows:
   main-workflow:
     jobs:
       - build
+  daily-workflow:
+    when: <<pipeline.parameter.daily>> 
+    jobs: 
+      - build-a
