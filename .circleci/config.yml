@@ -1,7 +1,7 @@
 version: 2.1
 
 parameters:
-  nightly:
+  daily:
     type: boolean
     default: false
 
