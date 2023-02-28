@@ -19,6 +19,8 @@ jobs:
 
 workflows:
   main-workflow:
+    when: 
+      not: <<pipeline.parameters.daily>>
     jobs:
       - build
   daily-workflow:
